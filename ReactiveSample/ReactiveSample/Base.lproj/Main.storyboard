@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +21,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssw-Wu-0uk">
                                 <rect key="frame" x="187.5" y="333.5" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -30,14 +31,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rx_Logo_M" translatesAutoresizingMaskIntoConstraints="NO" id="7yQ-75-TnS">
+                                <rect key="frame" x="144" y="195" width="87" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="Ps7-wW-Zmb"/>
+                                    <constraint firstAttribute="width" secondItem="7yQ-75-TnS" secondAttribute="height" multiplier="87:85" id="ph6-0n-zGf"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Okg-Fa-skE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ls1-M5-7h2"/>
                             <constraint firstItem="ssw-Wu-0uk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OUb-yg-S04"/>
+                            <constraint firstItem="Okg-Fa-skE" firstAttribute="top" secondItem="7yQ-75-TnS" secondAttribute="bottom" constant="17.5" id="QXr-FX-Qxh"/>
                             <constraint firstItem="ssw-Wu-0uk" firstAttribute="top" secondItem="Okg-Fa-skE" secondAttribute="bottom" constant="6" id="RK9-tL-cUu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Okg-Fa-skE" secondAttribute="trailing" constant="16" id="bg8-4X-dbe"/>
                             <constraint firstItem="ssw-Wu-0uk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iEX-VQ-SFi"/>
+                            <constraint firstItem="7yQ-75-TnS" firstAttribute="centerX" secondItem="Okg-Fa-skE" secondAttribute="centerX" id="jfc-T1-IfI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -51,4 +61,7 @@
             <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Rx_Logo_M" width="512" height="512"/>
+    </resources>
 </document>
