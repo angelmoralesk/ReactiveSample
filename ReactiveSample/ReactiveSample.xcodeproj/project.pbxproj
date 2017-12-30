@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3964F8E2287E91BD8127FF19 /* Pods_ReactiveSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FF9F25B6883DD8136699B7 /* Pods_ReactiveSample.framework */; };
 		883C6C831FF7396D006955CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C6C821FF7396D006955CD /* AppDelegate.swift */; };
 		883C6C851FF7396D006955CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C6C841FF7396D006955CD /* ViewController.swift */; };
 		883C6C881FF7396D006955CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883C6C861FF7396D006955CD /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E509A48DAD1B37A35ED167C /* Pods-ReactiveSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample.release.xcconfig"; sourceTree = "<group>"; };
+		7DB0C08CED059B1E296ECFDA /* Pods-ReactiveSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample.debug.xcconfig"; sourceTree = "<group>"; };
 		883C6C7F1FF7396D006955CD /* ReactiveSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883C6C821FF7396D006955CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		883C6C841FF7396D006955CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		883C6C891FF7396D006955CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		883C6C8C1FF7396D006955CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		883C6C8E1FF7396D006955CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0FF9F25B6883DD8136699B7 /* Pods_ReactiveSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3964F8E2287E91BD8127FF19 /* Pods_ReactiveSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E9F589CC23AE1278A19D23D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF9F25B6883DD8136699B7 /* Pods_ReactiveSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87279AC98221124DEE01587E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DB0C08CED059B1E296ECFDA /* Pods-ReactiveSample.debug.xcconfig */,
+				5E509A48DAD1B37A35ED167C /* Pods-ReactiveSample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		883C6C761FF7396D006955CD = {
 			isa = PBXGroup;
 			children = (
 				883C6C811FF7396D006955CD /* ReactiveSample */,
 				883C6C801FF7396D006955CD /* Products */,
+				87279AC98221124DEE01587E /* Pods */,
+				5E9F589CC23AE1278A19D23D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 883C6C911FF7396D006955CD /* Build configuration list for PBXNativeTarget "ReactiveSample" */;
 			buildPhases = (
+				670C97C3B42A65D2F4EACB5F /* [CP] Check Pods Manifest.lock */,
 				883C6C7B1FF7396D006955CD /* Sources */,
 				883C6C7C1FF7396D006955CD /* Frameworks */,
 				883C6C7D1FF7396D006955CD /* Resources */,
+				7E388D9DAA8B48C1C4FF3443 /* [CP] Embed Pods Frameworks */,
+				7859289361798633B6E0B595 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		670C97C3B42A65D2F4EACB5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReactiveSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7859289361798633B6E0B595 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E388D9DAA8B48C1C4FF3443 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		883C6C7B1FF7396D006955CD /* Sources */ = {
@@ -272,6 +355,7 @@
 		};
 		883C6C921FF7396D006955CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DB0C08CED059B1E296ECFDA /* Pods-ReactiveSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +370,7 @@
 		};
 		883C6C931FF7396D006955CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E509A48DAD1B37A35ED167C /* Pods-ReactiveSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

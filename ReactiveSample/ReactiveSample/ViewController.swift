@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var userInputTextField: UITextField!
+    @IBOutlet weak var userInputLabel: UILabel!
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        userInputTextField.rx
+                          .text
+                          .asDriver()
+                          .drive(userInputLabel.rx.text)
+                          .disposed(by: disposeBag)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
