@@ -62,6 +62,7 @@
                     <navigationItem key="navigationItem" title="Menu" id="guz-mD-RHI"/>
                     <connections>
                         <outlet property="tableView" destination="mXj-jd-p1R" id="7VO-lF-qy1"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="twitter" id="Yjq-nB-veC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5A-Lx-gw5" userLabel="First Responder" sceneMemberID="firstResponder"/>

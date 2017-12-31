@@ -28,8 +28,8 @@ class ReactMenuViewController: UIViewController {
                   }.disposed(by: disposeBag)
         
         tableView.rx.modelSelected(String.self)
-                  .subscribe(onNext: {
-                    print($0)
+            .subscribe({ [unowned self] _ in
+                    self.performSegue(withIdentifier: "twitter", sender: self)
                   }).disposed(by: disposeBag)
         
         
