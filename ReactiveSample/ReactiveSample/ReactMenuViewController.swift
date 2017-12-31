@@ -16,7 +16,8 @@ class ReactMenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     lazy var data : [String] = {
-        var items = ["TextField Twitter"]
+        var items = ["Twitter",
+                     "Form Validator"]
         return items
     }()
     
@@ -28,12 +29,14 @@ class ReactMenuViewController: UIViewController {
                   }.disposed(by: disposeBag)
         
         tableView.rx.modelSelected(String.self)
-            .subscribe({ [unowned self] _ in
-                    self.performSegue(withIdentifier: "twitter", sender: self)
-                  }).disposed(by: disposeBag)
+            .subscribe(onNext: { [unowned self] elem in
+                self.performSegue(withIdentifier: elem.lowercased(), sender: self)
+            },onError: nil, onCompleted: nil, onDisposed: nil)
+            .disposed(by: disposeBag)
+            
         
         
     }
-
+    
 
 }
