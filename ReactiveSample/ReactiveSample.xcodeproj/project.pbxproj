@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3964F8E2287E91BD8127FF19 /* Pods_ReactiveSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FF9F25B6883DD8136699B7 /* Pods_ReactiveSample.framework */; };
+		8800FD3A1FFDE0870009AA85 /* FormValidatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800FD391FFDE0870009AA85 /* FormValidatorViewController.swift */; };
 		880DA9D41FF96D3400BE81C8 /* ReactMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880DA9D31FF96D3400BE81C8 /* ReactMenuViewController.swift */; };
 		883C6C831FF7396D006955CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C6C821FF7396D006955CD /* AppDelegate.swift */; };
-		883C6C851FF7396D006955CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C6C841FF7396D006955CD /* ViewController.swift */; };
+		883C6C851FF7396D006955CD /* TwitterFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C6C841FF7396D006955CD /* TwitterFormViewController.swift */; };
 		883C6C881FF7396D006955CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883C6C861FF7396D006955CD /* Main.storyboard */; };
 		883C6C8A1FF7396D006955CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883C6C891FF7396D006955CD /* Assets.xcassets */; };
 		883C6C8D1FF7396D006955CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883C6C8B1FF7396D006955CD /* LaunchScreen.storyboard */; };
@@ -19,10 +20,11 @@
 /* Begin PBXFileReference section */
 		5E509A48DAD1B37A35ED167C /* Pods-ReactiveSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample.release.xcconfig"; sourceTree = "<group>"; };
 		7DB0C08CED059B1E296ECFDA /* Pods-ReactiveSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample.debug.xcconfig"; sourceTree = "<group>"; };
+		8800FD391FFDE0870009AA85 /* FormValidatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorViewController.swift; sourceTree = "<group>"; };
 		880DA9D31FF96D3400BE81C8 /* ReactMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactMenuViewController.swift; sourceTree = "<group>"; };
 		883C6C7F1FF7396D006955CD /* ReactiveSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883C6C821FF7396D006955CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		883C6C841FF7396D006955CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		883C6C841FF7396D006955CD /* TwitterFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterFormViewController.swift; sourceTree = "<group>"; };
 		883C6C871FF7396D006955CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		883C6C891FF7396D006955CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		883C6C8C1FF7396D006955CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,12 +83,13 @@
 			isa = PBXGroup;
 			children = (
 				883C6C821FF7396D006955CD /* AppDelegate.swift */,
-				883C6C841FF7396D006955CD /* ViewController.swift */,
+				883C6C841FF7396D006955CD /* TwitterFormViewController.swift */,
 				883C6C861FF7396D006955CD /* Main.storyboard */,
 				883C6C891FF7396D006955CD /* Assets.xcassets */,
 				883C6C8B1FF7396D006955CD /* LaunchScreen.storyboard */,
 				883C6C8E1FF7396D006955CD /* Info.plist */,
 				880DA9D31FF96D3400BE81C8 /* ReactMenuViewController.swift */,
+				8800FD391FFDE0870009AA85 /* FormValidatorViewController.swift */,
 			);
 			path = ReactiveSample;
 			sourceTree = "<group>";
@@ -224,9 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883C6C851FF7396D006955CD /* ViewController.swift in Sources */,
+				883C6C851FF7396D006955CD /* TwitterFormViewController.swift in Sources */,
 				880DA9D41FF96D3400BE81C8 /* ReactMenuViewController.swift in Sources */,
 				883C6C831FF7396D006955CD /* AppDelegate.swift in Sources */,
+				8800FD3A1FFDE0870009AA85 /* FormValidatorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

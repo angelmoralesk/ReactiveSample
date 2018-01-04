@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class TwitterViewController: UIViewController {
+class TwitterFormViewController: UIViewController {
 
     @IBOutlet weak var userInputTextField: UITextField!
     @IBOutlet weak var userInputLabel: UILabel!

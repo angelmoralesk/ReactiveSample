@@ -73,7 +73,7 @@
         <!--Form Validator-->
         <scene sceneID="JYj-CL-b5S">
             <objects>
-                <viewController title="Form Validator" id="hzA-nX-B8k" sceneMemberID="viewController">
+                <viewController title="Form Validator" id="hzA-nX-B8k" customClass="FormValidatorViewController" customModule="ReactiveSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJx-kG-xc6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,6 +116,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AP-1Q-rmO">
+                                <rect key="frame" x="16" y="234" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -124,6 +130,7 @@
                             <constraint firstItem="FCH-nT-Owy" firstAttribute="leading" secondItem="Fvv-v7-YMB" secondAttribute="leading" constant="16" id="E6c-AM-xyl"/>
                             <constraint firstItem="3lt-fs-DcW" firstAttribute="leading" secondItem="FCH-nT-Owy" secondAttribute="leading" id="J5F-Ah-YXF"/>
                             <constraint firstItem="Fvv-v7-YMB" firstAttribute="bottom" secondItem="Gmz-ls-OG4" secondAttribute="bottom" constant="20" id="Kdu-as-oII"/>
+                            <constraint firstItem="9AP-1Q-rmO" firstAttribute="leading" secondItem="Fvv-v7-YMB" secondAttribute="leading" constant="16" id="Rf9-Xz-cUS"/>
                             <constraint firstItem="TgT-sl-N7b" firstAttribute="trailing" secondItem="FCH-nT-Owy" secondAttribute="trailing" id="Swl-Cx-Wyj"/>
                             <constraint firstItem="802-Qj-UXM" firstAttribute="centerY" secondItem="Fvv-v7-YMB" secondAttribute="centerY" id="VE2-fF-F6Y"/>
                             <constraint firstItem="TgT-sl-N7b" firstAttribute="top" secondItem="802-Qj-UXM" secondAttribute="bottom" constant="20" id="Wfd-vQ-lTT"/>
@@ -131,15 +138,26 @@
                             <constraint firstItem="802-Qj-UXM" firstAttribute="leading" secondItem="FCH-nT-Owy" secondAttribute="leading" id="i2P-Nq-ExE"/>
                             <constraint firstItem="3lt-fs-DcW" firstAttribute="trailing" secondItem="FCH-nT-Owy" secondAttribute="trailing" id="imO-bU-eCk"/>
                             <constraint firstItem="Xjf-s6-1xi" firstAttribute="top" secondItem="FCH-nT-Owy" secondAttribute="bottom" constant="20" id="mKy-bD-bRG"/>
+                            <constraint firstItem="FCH-nT-Owy" firstAttribute="top" secondItem="9AP-1Q-rmO" secondAttribute="bottom" constant="16.5" id="nzs-dX-wiZ"/>
                             <constraint firstItem="802-Qj-UXM" firstAttribute="trailing" secondItem="FCH-nT-Owy" secondAttribute="trailing" id="pEm-Sh-4CQ"/>
                             <constraint firstItem="Xjf-s6-1xi" firstAttribute="trailing" secondItem="FCH-nT-Owy" secondAttribute="trailing" id="sAH-Zr-lg8"/>
                             <constraint firstItem="3lt-fs-DcW" firstAttribute="top" secondItem="TgT-sl-N7b" secondAttribute="bottom" constant="20" id="tOZ-SZ-cLb"/>
                             <constraint firstItem="TgT-sl-N7b" firstAttribute="leading" secondItem="FCH-nT-Owy" secondAttribute="leading" id="trq-Ru-Q4M"/>
                             <constraint firstItem="802-Qj-UXM" firstAttribute="top" secondItem="Xjf-s6-1xi" secondAttribute="bottom" constant="20" id="w5f-m0-rG5"/>
                             <constraint firstItem="Gmz-ls-OG4" firstAttribute="leading" secondItem="Fvv-v7-YMB" secondAttribute="leading" constant="16" id="y26-QZ-2wJ"/>
+                            <constraint firstItem="Fvv-v7-YMB" firstAttribute="trailing" secondItem="9AP-1Q-rmO" secondAttribute="trailing" constant="16" id="zx5-cd-5TI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fvv-v7-YMB"/>
                     </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="TgT-sl-N7b" id="gB8-qg-bCa"/>
+                        <outlet property="emailTextField" destination="3lt-fs-DcW" id="YEE-zR-dsk"/>
+                        <outlet property="helloLabel" destination="9AP-1Q-rmO" id="4wq-VJ-zei"/>
+                        <outlet property="lastNameTextField" destination="Xjf-s6-1xi" id="wSO-p9-Tvo"/>
+                        <outlet property="nameTextField" destination="FCH-nT-Owy" id="RIQ-l8-agM"/>
+                        <outlet property="secondLastNameTextField" destination="802-Qj-UXM" id="9ye-Dk-7Z1"/>
+                        <outlet property="validateButton" destination="Gmz-ls-OG4" id="TiA-Tg-3B7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1N7-rm-Fi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +166,7 @@
         <!--Example 1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReactiveSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TwitterFormViewController" customModule="ReactiveSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
