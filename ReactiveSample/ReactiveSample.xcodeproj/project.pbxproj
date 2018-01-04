@@ -10,6 +10,9 @@
 		3964F8E2287E91BD8127FF19 /* Pods_ReactiveSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FF9F25B6883DD8136699B7 /* Pods_ReactiveSample.framework */; };
 		8800FD3A1FFDE0870009AA85 /* FormValidatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800FD391FFDE0870009AA85 /* FormValidatorViewController.swift */; };
 		880DA9D41FF96D3400BE81C8 /* ReactMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880DA9D31FF96D3400BE81C8 /* ReactMenuViewController.swift */; };
+		8836F5A51FFEC11D00E0E40E /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8836F5A41FFEC11D00E0E40E /* ImageCollectionViewController.swift */; };
+		8836F5A91FFEC83E00E0E40E /* ImageCollectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8836F5A81FFEC83E00E0E40E /* ImageCollectionInfo.swift */; };
+		8836F5AB1FFECC8300E0E40E /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8836F5AA1FFECC8300E0E40E /* ImageCollectionViewCell.swift */; };
 		883C6C831FF7396D006955CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C6C821FF7396D006955CD /* AppDelegate.swift */; };
 		883C6C851FF7396D006955CD /* TwitterFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C6C841FF7396D006955CD /* TwitterFormViewController.swift */; };
 		883C6C881FF7396D006955CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883C6C861FF7396D006955CD /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 		7DB0C08CED059B1E296ECFDA /* Pods-ReactiveSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample.debug.xcconfig"; sourceTree = "<group>"; };
 		8800FD391FFDE0870009AA85 /* FormValidatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorViewController.swift; sourceTree = "<group>"; };
 		880DA9D31FF96D3400BE81C8 /* ReactMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactMenuViewController.swift; sourceTree = "<group>"; };
+		8836F5A41FFEC11D00E0E40E /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		8836F5A81FFEC83E00E0E40E /* ImageCollectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionInfo.swift; sourceTree = "<group>"; };
+		8836F5AA1FFECC8300E0E40E /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		883C6C7F1FF7396D006955CD /* ReactiveSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883C6C821FF7396D006955CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		883C6C841FF7396D006955CD /* TwitterFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterFormViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +109,32 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
+		8836F5A31FFEC0F500E0E40E /* ImageCollection */ = {
+			isa = PBXGroup;
+			children = (
+				8836F5AC1FFECC8800E0E40E /* Cells */,
+				8836F5A61FFEC56D00E0E40E /* Model */,
+				8836F5A41FFEC11D00E0E40E /* ImageCollectionViewController.swift */,
+			);
+			path = ImageCollection;
+			sourceTree = "<group>";
+		};
+		8836F5A61FFEC56D00E0E40E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8836F5A81FFEC83E00E0E40E /* ImageCollectionInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8836F5AC1FFECC8800E0E40E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8836F5AA1FFECC8300E0E40E /* ImageCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		883C6C761FF7396D006955CD = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +160,7 @@
 				8836F59E1FFEBC9E00E0E40E /* Menu */,
 				8836F59F1FFEBCA900E0E40E /* Twitter */,
 				8836F5A01FFEBCC100E0E40E /* Form */,
+				8836F5A31FFEC0F500E0E40E /* ImageCollection */,
 				8836F5A21FFEBCFD00E0E40E /* Interface */,
 				883C6C8E1FF7396D006955CD /* Info.plist */,
 			);
@@ -245,14 +278,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveSample/Pods-ReactiveSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,10 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8836F5A51FFEC11D00E0E40E /* ImageCollectionViewController.swift in Sources */,
 				883C6C851FF7396D006955CD /* TwitterFormViewController.swift in Sources */,
 				880DA9D41FF96D3400BE81C8 /* ReactMenuViewController.swift in Sources */,
+				8836F5AB1FFECC8300E0E40E /* ImageCollectionViewCell.swift in Sources */,
 				883C6C831FF7396D006955CD /* AppDelegate.swift in Sources */,
 				8800FD3A1FFDE0870009AA85 /* FormValidatorViewController.swift in Sources */,
+				8836F5A91FFEC83E00E0E40E /* ImageCollectionInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

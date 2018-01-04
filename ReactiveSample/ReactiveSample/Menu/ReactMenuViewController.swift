@@ -17,7 +17,8 @@ class ReactMenuViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     lazy var data : [String] = {
         var items = ["Twitter",
-                     "Form Validator"]
+                     "Form Validator",
+                     "Image Collection"]
         return items
     }()
     
