@@ -62,14 +62,20 @@ class FormValidatorViewController: UIViewController {
             .bind(to: secondLastNameTextField.rx.isHidden)
             .disposed(by: disposeBag)
         
-        let shouldShowValidateButton = Observable.combineLatest(shouldShowSecondLastName, addressValidation, emailValidation) { shouldShowSecondLastName, addressValidation, emailValidation in
-            
-            return !shouldShowSecondLastName && addressValidation && emailValidation ? false : true
+        let shouldEnableUserButton = Observable.combineLatest(shouldShowSecondLastName, addressValidation, emailValidation) { shouldShowSecondLastName, addressValidation, emailValidation in
+            return !shouldShowSecondLastName && addressValidation && emailValidation
             
         }
         
         
-       shouldShowValidateButton
+       shouldEnableUserButton
+            .bind(to: validateButton.rx.isUserInteractionEnabled)
+            .disposed(by: disposeBag)
+       
+      shouldEnableUserButton
+            .map{
+                !$0
+            }
             .bind(to: validateButton.rx.isHidden)
             .disposed(by: disposeBag)
         
