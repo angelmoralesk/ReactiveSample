@@ -61,6 +61,48 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8836F59E1FFEBC9E00E0E40E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				880DA9D31FF96D3400BE81C8 /* ReactMenuViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		8836F59F1FFEBCA900E0E40E /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				883C6C841FF7396D006955CD /* TwitterFormViewController.swift */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
+		8836F5A01FFEBCC100E0E40E /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				8800FD391FFDE0870009AA85 /* FormValidatorViewController.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		8836F5A11FFEBCE200E0E40E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				883C6C861FF7396D006955CD /* Main.storyboard */,
+				883C6C8B1FF7396D006955CD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8836F5A21FFEBCFD00E0E40E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				883C6C891FF7396D006955CD /* Assets.xcassets */,
+				8836F5A11FFEBCE200E0E40E /* Storyboards */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
 		883C6C761FF7396D006955CD = {
 			isa = PBXGroup;
 			children = (
@@ -83,13 +125,11 @@
 			isa = PBXGroup;
 			children = (
 				883C6C821FF7396D006955CD /* AppDelegate.swift */,
-				883C6C841FF7396D006955CD /* TwitterFormViewController.swift */,
-				883C6C861FF7396D006955CD /* Main.storyboard */,
-				883C6C891FF7396D006955CD /* Assets.xcassets */,
-				883C6C8B1FF7396D006955CD /* LaunchScreen.storyboard */,
+				8836F59E1FFEBC9E00E0E40E /* Menu */,
+				8836F59F1FFEBCA900E0E40E /* Twitter */,
+				8836F5A01FFEBCC100E0E40E /* Form */,
+				8836F5A21FFEBCFD00E0E40E /* Interface */,
 				883C6C8E1FF7396D006955CD /* Info.plist */,
-				880DA9D31FF96D3400BE81C8 /* ReactMenuViewController.swift */,
-				8800FD391FFDE0870009AA85 /* FormValidatorViewController.swift */,
 			);
 			path = ReactiveSample;
 			sourceTree = "<group>";

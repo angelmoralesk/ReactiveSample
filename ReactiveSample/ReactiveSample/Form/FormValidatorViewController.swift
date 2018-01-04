@@ -22,15 +22,14 @@ class FormValidatorViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func prepareUI() {
         
         nameTextField.rx.controlEvent([.editingDidEnd])
-                        .asObservable()
-                        .subscribe(onNext: { [unowned self] in
-                            self.helloLabel.text = "Hola \(self.nameTextField.text!)"
-                        })
-                        .disposed(by: disposeBag)
+            .asObservable()
+            .subscribe(onNext: { [unowned self] in
+                self.helloLabel.text = "Hola \(self.nameTextField.text!)"
+            })
+            .disposed(by: disposeBag)
         
         nameTextField.rx.controlEvent([.editingDidBegin, .editingChanged])
             .asObservable()
@@ -38,67 +37,84 @@ class FormValidatorViewController: UIViewController {
                 self.helloLabel.text = ""
             })
             .disposed(by: disposeBag)
+        
+    }
     
+    func prepareValidations() {
+        
         let nameValidation = nameTextField.rx.text
-                            .map({!$0!.isEmpty})
-                            .share(replay: 1)
-    
+            .map({!$0!.isEmpty})
+            .share(replay: 1)
+        
         let lastNameValidation = lastNameTextField.rx.text
-                                              .map({!$0!.isEmpty})
-                                              .share(replay: 1)
+            .map({!$0!.isEmpty})
+            .share(replay: 1)
         
         let addressValidation = addressTextField.rx.text
-                                                   .map({!$0!.isEmpty})
-                                                   .share(replay: 1)
+            .map({!$0!.isEmpty})
+            .share(replay: 1)
         
         let emailValidation = emailTextField.rx.text
-                                               .map { self.validate(email: $0!) }
+            .map { self.validate(email: $0!) }
         
         let shouldShowSecondLastName = Observable.combineLatest(nameValidation, lastNameValidation) {nameValidation, lastNameValidation -> Bool in
             return nameValidation && lastNameValidation ? false : true
         }
         
+        // Show secondLastNameTextField if name and last name are typed
         shouldShowSecondLastName
             .bind(to: secondLastNameTextField.rx.isHidden)
             .disposed(by: disposeBag)
         
         let shouldEnableUserButton = Observable.combineLatest(shouldShowSecondLastName, addressValidation, emailValidation) { shouldShowSecondLastName, addressValidation, emailValidation in
             return !shouldShowSecondLastName && addressValidation && emailValidation
-            
         }
         
-        
-       shouldEnableUserButton
+        // Enable button if textFields are typed
+        shouldEnableUserButton
             .bind(to: validateButton.rx.isUserInteractionEnabled)
             .disposed(by: disposeBag)
-       
-      shouldEnableUserButton
+        
+        // Show button if textFields are typed
+        shouldEnableUserButton
             .map{
                 !$0
             }
             .bind(to: validateButton.rx.isHidden)
             .disposed(by: disposeBag)
         
-       let buttonTapped = PublishSubject<String>()
-        
-       validateButton.rx.tap
-                        .map {
-                            "name: \(self.nameTextField.text!), " +
-                            "lastName: \(self.lastNameTextField.text!), " +
-                            "secondLastName: \(self.secondLastNameTextField.text!), " +
-                            "address: \(self.addressTextField.text!), " +
-                            "email: \(self.emailTextField.text!)"
-                        }
-                        .bind(to: buttonTapped)
-                        .disposed(by: disposeBag)
-        
-        buttonTapped.subscribe(onNext: {
-                print($0)
-        }).disposed(by: disposeBag)
-        
-        
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        prepareUI()
+        
+        prepareValidations()
+        
+        buildParamsFromTappedButton()
+    }
+    
+    func buildParamsFromTappedButton() {
+        
+        let buttonTapped = PublishSubject<String>()
+        
+        validateButton.rx.tap
+            .map {
+                "name: \(self.nameTextField.text!), " +
+                "lastName: \(self.lastNameTextField.text!), " +
+                "secondLastName: \(self.secondLastNameTextField.text!), " +
+                "address: \(self.addressTextField.text!), " +
+                "email: \(self.emailTextField.text!)"
+            }
+            .bind(to: buttonTapped)
+            .disposed(by: disposeBag)
+        
+        buttonTapped.subscribe(onNext: {
+            print($0)
+        }).disposed(by: disposeBag)
+        
+    }
     
     func validate(email : String) -> Bool {
         return email.contains("@")
