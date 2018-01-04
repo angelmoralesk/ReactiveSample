@@ -74,6 +74,24 @@ class FormValidatorViewController: UIViewController {
             .bind(to: validateButton.rx.isHidden)
             .disposed(by: disposeBag)
         
+       let buttonTapped = PublishSubject<String>()
+        
+       validateButton.rx.tap
+                        .map {
+                            "name: \(self.nameTextField.text!), " +
+                            "lastName: \(self.lastNameTextField.text!), " +
+                            "secondLastName: \(self.secondLastNameTextField.text!), " +
+                            "address: \(self.addressTextField.text!), " +
+                            "email: \(self.emailTextField.text!)"
+                        }
+                        .bind(to: buttonTapped)
+                        .disposed(by: disposeBag)
+        
+        buttonTapped.subscribe(onNext: {
+                print($0)
+        }).disposed(by: disposeBag)
+        
+        
     }
     
     
