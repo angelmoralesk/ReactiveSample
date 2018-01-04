@@ -87,31 +87,31 @@
                                 </state>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FCH-nT-Owy">
-                                <rect key="frame" x="16" y="84" width="343" height="30"/>
+                                <rect key="frame" x="16" y="250.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido Paterno" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xjf-s6-1xi">
-                                <rect key="frame" x="16" y="134" width="343" height="30"/>
+                                <rect key="frame" x="16" y="300.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido Materno" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="802-Qj-UXM">
-                                <rect key="frame" x="16" y="184" width="343" height="30"/>
+                                <rect key="frame" x="16" y="350.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dirección" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TgT-sl-N7b">
-                                <rect key="frame" x="16" y="234" width="343" height="30"/>
+                                <rect key="frame" x="16" y="400.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lt-fs-DcW">
-                                <rect key="frame" x="16" y="284" width="343" height="30"/>
+                                <rect key="frame" x="16" y="450.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -124,8 +124,8 @@
                             <constraint firstItem="FCH-nT-Owy" firstAttribute="leading" secondItem="Fvv-v7-YMB" secondAttribute="leading" constant="16" id="E6c-AM-xyl"/>
                             <constraint firstItem="3lt-fs-DcW" firstAttribute="leading" secondItem="FCH-nT-Owy" secondAttribute="leading" id="J5F-Ah-YXF"/>
                             <constraint firstItem="Fvv-v7-YMB" firstAttribute="bottom" secondItem="Gmz-ls-OG4" secondAttribute="bottom" constant="20" id="Kdu-as-oII"/>
-                            <constraint firstItem="FCH-nT-Owy" firstAttribute="top" secondItem="Fvv-v7-YMB" secondAttribute="top" constant="20" id="Rpb-zm-oRC"/>
                             <constraint firstItem="TgT-sl-N7b" firstAttribute="trailing" secondItem="FCH-nT-Owy" secondAttribute="trailing" id="Swl-Cx-Wyj"/>
+                            <constraint firstItem="802-Qj-UXM" firstAttribute="centerY" secondItem="Fvv-v7-YMB" secondAttribute="centerY" id="VE2-fF-F6Y"/>
                             <constraint firstItem="TgT-sl-N7b" firstAttribute="top" secondItem="802-Qj-UXM" secondAttribute="bottom" constant="20" id="Wfd-vQ-lTT"/>
                             <constraint firstItem="Xjf-s6-1xi" firstAttribute="leading" secondItem="FCH-nT-Owy" secondAttribute="leading" id="g4s-9u-dtL"/>
                             <constraint firstItem="802-Qj-UXM" firstAttribute="leading" secondItem="FCH-nT-Owy" secondAttribute="leading" id="i2P-Nq-ExE"/>
