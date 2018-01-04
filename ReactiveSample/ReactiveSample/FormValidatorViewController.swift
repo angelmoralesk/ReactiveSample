@@ -52,8 +52,7 @@ class FormValidatorViewController: UIViewController {
                                                    .share(replay: 1)
         
         let emailValidation = emailTextField.rx.text
-                                                .map({!$0!.isEmpty})
-                                                .share(replay: 1)
+                                               .map { self.validate(email: $0!) }
         
         let shouldShowSecondLastName = Observable.combineLatest(nameValidation, lastNameValidation) {nameValidation, lastNameValidation -> Bool in
             return nameValidation && lastNameValidation ? false : true
@@ -95,8 +94,8 @@ class FormValidatorViewController: UIViewController {
     }
     
     
-    func validate(name : String) -> Bool {
-        return name.count >= 3
+    func validate(email : String) -> Bool {
+        return email.contains("@")
     }
 
 
