@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import GitHubServices
 
 class ReactMenuViewController: UIViewController {
 
@@ -19,7 +18,8 @@ class ReactMenuViewController: UIViewController {
     lazy var data : [String] = {
         var items = ["Twitter",
                      "Form Validator",
-                     "Image Collection"]
+                     "Image Collection",
+                     "GitHub"]
         return items
     }()
     
@@ -32,14 +32,18 @@ class ReactMenuViewController: UIViewController {
         
         tableView.rx.modelSelected(String.self)
             .subscribe(onNext: { [unowned self] elem in
-                self.performSegue(withIdentifier: elem.lowercased(), sender: self)
+                if elem.contains("GitHub") {
+                    let storyboard = UIStoryboard(name: "GitHub", bundle: nil)
+                    if let ghVC = storyboard.instantiateInitialViewController() as? GitHubViewController {
+                        self.navigationController?.pushViewController(ghVC, animated: true)
+                    }
+                } else {
+                    self.performSegue(withIdentifier: elem.lowercased(), sender: self)
+                }
+               
             },onError: nil, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
             
-        GitHubProvider.fetchRepositories(userId: "ctime95") { (status) in
-            
-        }
-        
     }
     
 

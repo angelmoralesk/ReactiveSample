@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="twK-WZ-F3h">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Git Hub View Controller-->
+        <scene sceneID="j0M-vg-G0G">
+            <objects>
+                <viewController id="twK-WZ-F3h" customClass="GitHubViewController" customModule="ReactiveSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hbB-UZ-eFb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g17-ak-Niv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GitHubCell" id="Au4-xx-2BP">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Au4-xx-2BP" id="Jsn-0H-8Tv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="g17-ak-Niv" firstAttribute="trailing" secondItem="nkn-UY-UWq" secondAttribute="trailing" id="5gf-Io-s5h"/>
+                            <constraint firstItem="g17-ak-Niv" firstAttribute="leading" secondItem="nkn-UY-UWq" secondAttribute="leading" id="Lxg-Co-uAl"/>
+                            <constraint firstItem="g17-ak-Niv" firstAttribute="bottom" secondItem="nkn-UY-UWq" secondAttribute="bottom" id="TsY-BC-2s2"/>
+                            <constraint firstItem="g17-ak-Niv" firstAttribute="top" secondItem="nkn-UY-UWq" secondAttribute="top" id="ZJH-yU-T7l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nkn-UY-UWq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ewu-3y-Q6A"/>
+                    <connections>
+                        <outlet property="tableView" destination="g17-ak-Niv" id="7nP-Nh-IdJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8V-Xv-H3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293.60000000000002" y="-41.829085457271368"/>
+        </scene>
+    </scenes>
+</document>
