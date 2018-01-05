@@ -1,0 +1,3 @@
+[submodule "ReactiveSample/Providers"]
+	path = ReactiveSample/Providers
+	url = https://github.com/ctime95/GitHubProvider.git

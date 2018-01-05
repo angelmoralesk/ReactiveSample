@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import GitHubServices
 
 class ReactMenuViewController: UIViewController {
 
@@ -35,7 +36,9 @@ class ReactMenuViewController: UIViewController {
             },onError: nil, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
             
-        
+        GitHubProvider.fetchRepositories(userId: "ctime95") { (status) in
+            
+        }
         
     }
     
