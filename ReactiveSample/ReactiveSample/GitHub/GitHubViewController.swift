@@ -13,18 +13,31 @@ import RxDataSources
 
 class GitHubViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!  {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
     
     let disposeBag = DisposeBag()
+    var repos : [GHUserRepo] = []
     
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSearchController()
+        
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchController.isActive = true
+    }
+
+    
     func configureSearchController() {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Ingresa GitHub NickName"
@@ -32,31 +45,42 @@ class GitHubViewController: UIViewController {
         definesPresentationContext = true
         
         searchController.searchBar.rx
-                                  .searchButtonClicked
+                                  .text
+                                  .throttle(0.3, scheduler: MainScheduler.instance)
                                   .asObservable()
-                                  .subscribe(onNext: {
+                                  .subscribe({_ in
                                         self.fetchRepos(userID: self.searchController.searchBar.text!)
                                   }).disposed(by: disposeBag)
        
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        searchController.isActive = true
-    }
-
     func fetchRepos(userID : String) {
         
         GitHubPresenter.getRepositories(gitHubID: userID) { [weak self] repos in
             guard let strongSelf = self else { return }
             let customRepos = repos
-            customRepos
-            .bind(to: strongSelf.tableView.rx.items(cellIdentifier: "GitHubCell")) { _, repo, cell in
-                        cell.textLabel?.text = repo.name
-                    }
-            .disposed(by: strongSelf.disposeBag)
+            strongSelf.repos = customRepos
+            strongSelf.tableView.reloadData()
         }
+    }
+    
+}
+
+extension GitHubViewController : UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return repos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GitHubCell", for: indexPath)
+        let repo = repos[indexPath.row]
+        cell.textLabel?.text = repo.name
+        return cell
     }
     
 }

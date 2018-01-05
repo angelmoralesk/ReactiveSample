@@ -2,7 +2,7 @@
 //  GitHubPresenter.swift
 //  ReactiveSample
 //
-//  Created by Angel Jesse Morales Karam Kairuz on 05/01/18.
+//  Created by TheKairuz on 05/01/18.
 //  Copyright © 2018 TheKairuz. All rights reserved.
 //
 
@@ -15,11 +15,10 @@ struct GitHubPresenter {
     let searchText = Variable("")
     let disposeBag = DisposeBag()
 
-    static func getRepositories(gitHubID : String, completion : @escaping ((_ repos : Observable<[GHUserRepo]>) ->())) {
+    static func getRepositories(gitHubID : String, completion : @escaping ((_ repos : [GHUserRepo]) ->())) {
         GitHubProvider.fetchRepositories(userId: gitHubID) { (status, repos, error) in
             if status {
-                let observableRepos = Observable.just(repos)
-                completion(observableRepos)
+                completion(repos)
             }
         }
         
