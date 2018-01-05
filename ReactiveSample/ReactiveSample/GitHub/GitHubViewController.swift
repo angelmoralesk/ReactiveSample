@@ -26,30 +26,38 @@ class GitHubViewController: UIViewController {
     }
 
     func configureSearchController() {
-        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Ingresa GitHub NickName"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        searchController.searchBar.rx
+                                  .searchButtonClicked
+                                  .asObservable()
+                                  .subscribe(onNext: {
+                                        self.fetchRepos(userID: self.searchController.searchBar.text!)
+                                  }).disposed(by: disposeBag)
+       
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         searchController.isActive = true
     }
 
-}
-
-extension GitHubViewController : UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-     
-        GitHubPresenter.getRepositories(gitHubID: searchController.searchBar.text!) { repos in
+    func fetchRepos(userID : String) {
+        
+        GitHubPresenter.getRepositories(gitHubID: userID) { [weak self] repos in
+            guard let strongSelf = self else { return }
             let customRepos = repos
-            customRepos.bind(to: self.tableView.rx.items(cellIdentifier: "GitHubCell")) { _, repo, cell in
-                cell.textLabel?.text = repo.name
-            }.disposed(by: self.disposeBag)
+            customRepos
+            .bind(to: strongSelf.tableView.rx.items(cellIdentifier: "GitHubCell")) { _, repo, cell in
+                        cell.textLabel?.text = repo.name
+                    }
+            .disposed(by: strongSelf.disposeBag)
         }
     }
+    
 }
 
